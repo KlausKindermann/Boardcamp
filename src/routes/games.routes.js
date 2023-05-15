@@ -1,11 +1,10 @@
-import { Router } from "express";
-import { create } from "../controllers/games.controllers.js";
-import { validSchemaGames } from "../middlewares/games.middleware.js";
-import { listAll } from "../controllers/games.controllers.js";
+import { Router } from 'express'
+import { create, getAll } from '../controllers/games.controller.js'
+import { validSchemaGames } from '../middlewares/games.middleware.js'
 
 const gameRouter = Router()
 
-gameRouter.get('/games', listAll)
+gameRouter.get('/games', getAll)
 gameRouter.post('/games', validSchemaGames, create)
 
 export default gameRouter
