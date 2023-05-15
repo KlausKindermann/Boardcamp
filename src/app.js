@@ -13,5 +13,7 @@ app.use(express.json())
 
 app.use([gameRouter, customerRouter, rentalsRouter])
 
-const PORT = process.env.PORT
-app.listen(PORT, () => console.log(`Servidor rodando na porta: ${PORT}`))
+const port = process.env.PORT || 5000
+app.listen(port, () => {
+	console.log(`Servidor rodando na porta ${port}`)
+})
